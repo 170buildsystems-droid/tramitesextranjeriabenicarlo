@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img" aria-label="Trámites Benicarló · معاملات · ⴰⵎⴰⵣⵉⵖ">
+  <!-- Icono: misma composición que logo-icon.svg, sin la franja inferior -->
+  <g transform="translate(0,0)">
+    <rect width="400" height="400" rx="88" fill="#006233"/>
+    <polygon fill="#D4A017" points="350,200 287.8,236.4 306.1,306.1 236.4,287.8 200,350 163.6,287.8 93.9,306.1 112.2,236.4 50,200 112.2,163.6 93.9,93.9 163.6,112.2 200,50 236.4,112.2 306.1,93.9 287.8,163.6"/>
+    <circle cx="200" cy="200" r="82" fill="#C1272D"/>
+    <circle cx="200" cy="200" r="82" fill="none" stroke="#FFFFFF" stroke-width="6"/>
+    <text x="200" y="232" text-anchor="middle" font-size="120" font-family="'DejaVu Sans', 'Noto Naskh Arabic', 'Amiri', 'Arial Unicode MS', 'Segoe UI', sans-serif" fill="#FFFFFF">م</text>
+  </g>
+  <!-- Texto principal -->
+  <text x="440" y="190" font-size="92" font-weight="700" font-family="'Helvetica Neue', 'Arial', sans-serif" fill="#006233">Trámites</text>
+  <text x="440" y="270" font-size="58" font-family="'Helvetica Neue', 'Arial', sans-serif" fill="#C1272D">Benicarló</text>
+  <!-- Línea trilingüe -->
+  <text x="440" y="340" font-size="34" font-family="'DejaVu Sans', 'Noto Sans Arabic', 'Arial Unicode MS', 'Segoe UI', sans-serif" fill="#333333">معاملات · darija · ⴰⵎⴰⵣⵉⵖ</text>
+</svg>

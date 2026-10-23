@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Trámites Benicarló">
+  <!-- Fondo: verde de la bandera marroquí -->
+  <rect width="400" height="400" rx="88" fill="#006233"/>
+  <!-- Estrella de 8 puntas (motivo zellige) en oro -->
+  <polygon fill="#D4A017" points="350,200 287.8,236.4 306.1,306.1 236.4,287.8 200,350 163.6,287.8 93.9,306.1 112.2,236.4 50,200 112.2,163.6 93.9,93.9 163.6,112.2 200,50 236.4,112.2 306.1,93.9 287.8,163.6"/>
+  <!-- Círculo central en rojo marroquí -->
+  <circle cx="200" cy="200" r="82" fill="#C1272D"/>
+  <circle cx="200" cy="200" r="82" fill="none" stroke="#FFFFFF" stroke-width="6"/>
+  <!-- Letra árabe mim (م), inicial de «معاملات» (trámites) -->
+  <text x="200" y="232" text-anchor="middle" font-size="120" font-family="'DejaVu Sans', 'Noto Naskh Arabic', 'Amiri', 'Arial Unicode MS', 'Segoe UI', sans-serif" fill="#FFFFFF">م</text>
+  <!-- Franja de tifinagh (ⴰ = primera letra del alfabeto amazigh) -->
+  <text x="200" y="372" text-anchor="middle" font-size="26" font-family="'DejaVu Sans', 'Ebrima', 'Noto Sans Tifinagh', 'Segoe UI Symbol', sans-serif" fill="#FFFFFF" letter-spacing="8">ⴰⵎⴰⵣⵉⵖ</text>
+</svg>

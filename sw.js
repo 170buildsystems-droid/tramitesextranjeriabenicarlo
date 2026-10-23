@@ -1,12 +1,13 @@
 // Service worker mínimo: cachea la cáscara de la app para uso sin conexión.
 // Los datos de cuenta y pagos nunca se cachean.
 const CACHE = "tramites-v1";
+// Rutas relativas a la ubicación de sw.js, para funcionar en subcarpetas (GitHub Pages).
 const SHELL = [
-  "/",
-  "/app/",
-  "/brand/logo-icon.svg",
-  "/brand/logo.svg",
-  "/manifest.webmanifest",
+  "./",
+  "./app/",
+  "./brand/logo-icon.svg",
+  "./brand/logo.svg",
+  "./manifest.webmanifest",
 ];
 
 self.addEventListener("install", (event) => {

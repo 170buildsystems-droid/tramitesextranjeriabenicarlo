@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
   <title>Trámites Benicarló · App</title>
-  <link rel="manifest" href="/manifest.webmanifest">
-  <link rel="icon" href="/brand/logo-icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="brand/logo-icon.svg" type="image/svg+xml">
   <meta name="theme-color" content="#006233">
   <style>
     :root { --g:#006233; --r:#C1272D; --o:#D4A017; --bg:#fbfaf7; --fg:#1d1d1b; --mut:#5b5b57; --card:#fff; --line:#e4e1d8; }
@@ -31,7 +31,7 @@
 </head>
 <body>
 <header>
-  <img src="/brand/logo-icon.svg" alt="">
+  <img src="brand/logo-icon.svg" alt="">
   <h1 id="app-title">Trámites Benicarló</h1>
 </header>
 
@@ -47,12 +47,12 @@
 
   <h2 id="tiles-title">Trámites</h2>
   <div class="tiles">
-    <a class="tile" href="/tramites/empadronamiento/"><strong data-k="emp">Empadronamiento</strong><span data-k="emp-s">Requisitos y pasos</span></a>
-    <a class="tile" href="/tramites/nie/"><strong data-k="nie">NIE</strong><span data-k="nie-s">Cita previa y documentos</span></a>
-    <a class="tile" href="/tramites/tarjeta-sanitaria/"><strong data-k="sani">Tarjeta sanitaria</strong><span data-k="sani-s">Acceso a la sanidad pública</span></a>
-    <a class="tile" href="/tramites/escolarizacion/"><strong data-k="esc">Escolarización</strong><span data-k="esc-s">Matrícula de niños y niñas</span></a>
-    <a class="tile" href="/tramites/imv/"><strong data-k="imv">Ingreso Mínimo Vital</strong><span data-k="imv-s">Solicitud y requisitos</span></a>
-    <a class="tile" href="/tramites/empleo/"><strong data-k="emp2">Empleo</strong><span data-k="emp2-s">Inscripción como demandante</span></a>
+    <a class="tile" href="../tramites/empadronamiento/"><strong data-k="emp">Empadronamiento</strong><span data-k="emp-s">Requisitos y pasos</span></a>
+    <a class="tile" href="../tramites/nie/"><strong data-k="nie">NIE</strong><span data-k="nie-s">Cita previa y documentos</span></a>
+    <a class="tile" href="../tramites/tarjeta-sanitaria/"><strong data-k="sani">Tarjeta sanitaria</strong><span data-k="sani-s">Acceso a la sanidad pública</span></a>
+    <a class="tile" href="../tramites/escolarizacion/"><strong data-k="esc">Escolarización</strong><span data-k="esc-s">Matrícula de niños y niñas</span></a>
+    <a class="tile" href="../tramites/imv/"><strong data-k="imv">Ingreso Mínimo Vital</strong><span data-k="imv-s">Solicitud y requisitos</span></a>
+    <a class="tile" href="../tramites/empleo/"><strong data-k="emp2">Empleo</strong><span data-k="emp2-s">Inscripción como demandante</span></a>
   </div>
 
   <p class="note" id="app-note">Información general, sin valor jurídico. Verifica siempre en la fuente oficial. No somos gestoría ni abogados.</p>
@@ -106,7 +106,7 @@
   applyLang(T[saved] ? saved : "es");
 
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/sw.js").catch(() => {});
+    navigator.serviceWorker.register("../sw.js", { scope: "../" }).catch(() => {});
   }
 </script>
 </body>

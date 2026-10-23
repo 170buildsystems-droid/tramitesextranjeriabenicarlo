@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Mi cuenta · Trámites Benicarló</title>
+  <link rel="icon" href="../brand/logo-icon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#006233">
+  <style>
+    :root { --g:#006233; --r:#C1272D; --o:#D4A017; --bg:#fbfaf7; --fg:#1d1d1b; --mut:#5b5b57; --card:#fff; --line:#e4e1d8; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background:var(--bg); color:var(--fg); line-height:1.6; font-size:17px; }
+    header { background:var(--g); color:#fff; padding:14px 16px; display:flex; justify-content:space-between; align-items:center; gap:10px; }
+    header a { color:#fff; text-decoration:none; font-weight:600; }
+    main { max-width: 680px; margin: 0 auto; padding: 20px 16px 56px; }
+    h1 { font-size: 26px; margin: 12px 0; }
+    h2 { font-size: 20px; margin: 24px 0 8px; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px; margin:14px 0; }
+    label { display:block; margin:10px 0 4px; font-weight:600; }
+    input, select { width:100%; padding:11px; font: inherit; border:1px solid var(--line); border-radius:8px; background:#fff; }
+    button { background:var(--g); color:#fff; border:0; padding:12px 18px; border-radius:10px; font: inherit; font-weight:600; cursor:pointer; margin-top:12px; }
+    button.secondary { background:none; color:var(--g); border:1px solid var(--g); }
+    button:disabled { opacity:.6; cursor:wait; }
+    .msg { margin-top:10px; font-size:15px; }
+    .msg.err { color:var(--r); }
+    .msg.ok { color:var(--g); }
+    .price { font-size:32px; font-weight:800; color:var(--g); }
+    ol.steps li { margin: 10px 0; }
+    .muted { color:var(--mut); font-size:14px; }
+    .hidden { display:none !important; }
+    .draft { background:#fff4d6; border:1px solid #e0b84a; border-radius:10px; padding:10px 14px; font-size:14px; }
+    :focus-visible { outline: 3px solid var(--o); outline-offset: 2px; }
+  </style>
+</head>
+<body>
+<header>
+  <a href="../">← Trámites Benicarló</a>
+  <button id="logout" class="secondary hidden" style="margin:0;background:none;border-color:#fff;color:#fff">Salir</button>
+</header>
+
+<main>
+  <div id="setup-warning" class="card draft hidden">
+    La configuración de Supabase todavía no está completada (<code>cuenta/config.js</code>). El acceso no funcionará hasta que se añadan los valores del proyecto.
+  </div>
+
+  <!-- Acceso -->
+  <section id="login" class="hidden">
+    <h1>Entra en tu cuenta</h1>
+    <p class="muted">La guía personalizada es de pago (5 €/mes). Crea una cuenta o entra con la tuya.</p>
+    <div class="card">
+      <label for="email">Email</label>
+      <input id="email" type="email" autocomplete="email" required>
+      <label for="password">Contraseña (mínimo 8 caracteres)</label>
+      <input id="password" type="password" autocomplete="current-password" minlength="8" required>
+      <button id="btn-login" type="button">Entrar</button>
+      <button id="btn-signup" type="button" class="secondary">Crear cuenta</button>
+      <p id="auth-msg" class="msg" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- Suscripción -->
+  <section id="paywall" class="hidden">
+    <h1>Activa tu guía personalizada</h1>
+    <div class="card">
+      <p class="price">5 € / mes</p>
+      <ul>
+        <li>Ruta de trámites según tu situación.</li>
+        <li>Pasos completos con fuente oficial y fecha de revisión.</li>
+        <li>Recordatorios y generadores de documentos (próximamente).</li>
+      </ul>
+      <p class="muted">Cancelas cuando quieras. La información general de la web sigue siendo gratuita. No somos gestoría ni abogados.</p>
+      <button id="btn-subscribe" type="button">Suscribirme</button>
+      <p id="pay-msg" class="msg" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- Guía -->
+  <section id="guia" class="hidden">
+    <h1>Tu guía</h1>
+    <div class="card">
+      <label for="motivo">¿Qué trámite necesitas ahora?</label>
+      <select id="motivo">
+        <option value="">Elige una opción</option>
+        <option value="empadronamiento">Empadronamiento</option>
+        <option value="nie">NIE</option>
+        <option value="tarjeta-sanitaria">Tarjeta sanitaria</option>
+        <option value="escolarizacion">Escolarización</option>
+        <option value="imv">Ingreso Mínimo Vital</option>
+        <option value="empleo">Inscripción como demandante de empleo</option>
+      </select>
+      <button id="btn-save-motivo" type="button" class="secondary">Guardar</button>
+      <p id="guia-msg" class="msg" role="status" aria-live="polite"></p>
+    </div>
+
+    <div class="card">
+      <h2 id="steps-title">Pasos</h2>
+      <ol class="steps" id="steps"></ol>
+      <p id="steps-empty" class="muted hidden">Todavía no hay pasos publicados para este trámite.</p>
+    </div>
+  </section>
+</main>
+
+<script src="config.js"></script>
+<script type="module">
+  import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+
+  const cfg = window.APP_CONFIG;
+  const $ = (id) => document.getElementById(id);
+  const show = (el, on) => el.classList.toggle("hidden", !on);
+  const msg = (el, text, ok = false) => { el.textContent = text; el.className = "msg " + (ok ? "ok" : "err"); };
+
+  if (!cfg || cfg.SUPABASE_URL.includes("TU-PROYECTO")) {
+    show($("setup-warning"), true);
+  }
+
+  const sb = createClient(cfg.SUPABASE_URL, cfg.SUPABASE_ANON_KEY);
+
+  function hideAll() {
+    ["login", "paywall", "guia"].forEach((id) => show($(id), false));
+  }
+
+  async function isPremium(userId) {
+    const { data, error } = await sb
+      .from("subscriptions")
+      .select("status,current_period_end")
+      .eq("user_id", userId)
+      .in("status", ["active", "trialing"])
+      .maybeSingle();
+    if (error || !data) return false;
+    return !data.current_period_end || new Date(data.current_period_end) > new Date();
+  }
+
+  async function loadSteps(motivo, premium) {
+    const list = $("steps");
+    list.innerHTML = "";
+    if (!motivo) { show($("steps-empty"), true); return; }
+    // RLS limita los pasos: sin suscripción solo llegan los dos primeros.
+    const { data, error } = await sb
+      .from("procedure_steps")
+      .select("step_order,title_es,body_es,official_source_url,last_verified_at")
+      .eq("procedure_slug", motivo)
+      .order("step_order");
+    if (error) { msg($("guia-msg"), "No se han podido cargar los pasos."); return; }
+    show($("steps-empty"), !data || data.length === 0);
+    (data || []).forEach((s) => {
+      const li = document.createElement("li");
+      const title = document.createElement("strong");
+      title.textContent = s.title_es;
+      const body = document.createElement("p");
+      body.textContent = s.body_es;
+      const src = document.createElement("p");
+      src.className = "muted";
+      src.append("Fuente oficial: ");
+      const a = document.createElement("a");
+      a.href = s.official_source_url;
+      a.rel = "noopener";
+      a.textContent = "ver";
+      src.append(a, ` · revisado el ${s.last_verified_at}`);
+      li.append(title, body, src);
+      list.append(li);
+    });
+    if (!premium) {
+      const note = document.createElement("p");
+      note.className = "muted";
+      note.textContent = "Solo se muestran los dos primeros pasos. Activa la suscripción para ver la ruta completa.";
+      list.after(note);
+    }
+  }
+
+  async function route() {
+    hideAll();
+    const { data: { session } } = await sb.auth.getSession();
+    if (!session) {
+      show($("login"), true);
+      show($("logout"), false);
+      return;
+    }
+    show($("logout"), true);
+    const premium = await isPremium(session.user.id);
+    if (!premium) {
+      show($("paywall"), true);
+      return;
+    }
+    show($("guia"), true);
+    const { data: situation } = await sb
+      .from("user_situations")
+      .select("answers")
+      .eq("user_id", session.user.id)
+      .maybeSingle();
+    const motivo = situation?.answers?.motivo || "";
+    $("motivo").value = motivo;
+    await loadSteps(motivo, premium);
+  }
+
+  $("btn-login").addEventListener("click", async () => {
+    const { error } = await sb.auth.signInWithPassword({ email: $("email").value, password: $("password").value });
+    if (error) msg($("auth-msg"), "Email o contraseña incorrectos."); else route();
+  });
+
+  $("btn-signup").addEventListener("click", async () => {
+    const { error } = await sb.auth.signUp({ email: $("email").value, password: $("password").value });
+    if (error) msg($("auth-msg"), "No se pudo crear la cuenta. Revisa los datos.");
+    else msg($("auth-msg"), "Cuenta creada. Si pide confirmación, revisa tu email.", true);
+  });
+
+  $("logout").addEventListener("click", async () => { await sb.auth.signOut(); route(); });
+
+  $("btn-subscribe").addEventListener("click", async () => {
+    const btn = $("btn-subscribe");
+    btn.disabled = true;
+    const { data: { session } } = await sb.auth.getSession();
+    try {
+      const res = await fetch(cfg.FUNCTIONS_URL + "/create-checkout", {
+        method: "POST",
+        headers: { Authorization: "Bearer " + session.access_token, "Content-Type": "application/json" },
+        body: "{}",
+      });
+      const json = await res.json();
+      if (json.url) { location.href = json.url; return; }
+      if (json.alreadyPremium) { route(); return; }
+      msg($("pay-msg"), "No se pudo iniciar el pago. Inténtalo de nuevo.");
+    } catch {
+      msg($("pay-msg"), "Error de conexión. Inténtalo de nuevo.");
+    } finally {
+      btn.disabled = false;
+    }
+  });
+
+  $("btn-save-motivo").addEventListener("click", async () => {
+    const { data: { session } } = await sb.auth.getSession();
+    const motivo = $("motivo").value;
+    const { error } = await sb.from("user_situations").upsert({
+      user_id: session.user.id,
+      answers: { motivo },
+      updated_at: new Date().toISOString(),
+    });
+    if (error) { msg($("guia-msg"), "No se pudo guardar."); return; }
+    msg($("guia-msg"), "Guardado.", true);
+    await loadSteps(motivo, await isPremium(session.user.id));
+  });
+
+  // Tras volver de Stripe, el webhook puede tardar unos segundos en activar la suscripción.
+  if (new URLSearchParams(location.search).get("pago") === "ok") {
+    setTimeout(route, 3000);
+  }
+
+  sb.auth.onAuthStateChange(() => route());
+  route();
+</script>
+</body>
+</html>

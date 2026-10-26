@@ -2,6 +2,13 @@
 
 Proyecto en fase 1. Estructura y estado:
 
+## Landing de venta (guía 9,99 € + kit CCSE 4,99 €)
+- La landing vende una guía en PDF por 9,99 €, con order bump del kit CCSE (+4,99 €) y garantía de 14 días.
+- **Pago:** rellenar `PAYMENT_LINKS` al final de `index.html` con dos Stripe Payment Links (guía sola; guía + kit). Mientras estén vacíos, el botón muestra un aviso de "abre muy pronto" con el email.
+- **Antes de activar la venta:** escribir el PDF de la guía (arraigo con las 5 figuras del RD 1155/2024, reagrupación, renovaciones, tasas) y el kit CCSE, verificados en fuente oficial. Configurar en Stripe la entrega del PDF tras el pago.
+- **Fotos:** el puerto es una ilustración SVG. Sustituir por fotos propias de Benicarló con derechos de uso. No usar capturas simuladas de sedes oficiales.
+- El texto árabe del héroe es un borrador: revisar con hablante nativo.
+
 | Ruta | Estado |
 |---|---|
 | `index.html` | Landing pública con hreflang, CTA de 5 €/mes y FAQ |

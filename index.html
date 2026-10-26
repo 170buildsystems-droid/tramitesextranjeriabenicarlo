@@ -3,115 +3,391 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trámites de extranjería en Benicarló | Guías paso a paso</title>
-  <meta name="description" content="Guías claras en español, árabe y darija para empadronamiento, NIE, tarjeta sanitaria y escolarización. Fuentes oficiales y fecha de revisión visible.">
+  <title>Tus papeles en Benicarló, paso a paso | Guía práctica</title>
+  <meta name="description" content="Guía práctica de extranjería para la comunidad marroquí en Benicarló: arraigo, renovaciones, reagrupación familiar y nacionalidad. Fuentes oficiales y lenguaje claro.">
   <link rel="canonical" href="https://tramitesextranjeriabenicarlo.com/">
   <link rel="alternate" hreflang="es" href="https://tramitesextranjeriabenicarlo.com/">
-  <link rel="alternate" hreflang="ar" href="https://tramitesextranjeriabenicarlo.com/ar/">
-  <link rel="alternate" hreflang="ary" href="https://tramitesextranjeriabenicarlo.com/ary/">
   <meta name="theme-color" content="#006233">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="brand/logo-icon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Tus papeles en Benicarló, paso a paso">
+  <meta property="og:description" content="Arraigo, renovaciones, reagrupación familiar y nacionalidad, explicados sin tecnicismos.">
+  <meta property="og:image" content="brand/icon-512.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Noto+Naskh+Arabic:wght@500;700&display=swap" rel="stylesheet">
   <style>
-    :root { --c:#1f5f4a; --bg:#fbfaf7; --fg:#1d1d1b; --mut:#5b5b57; --card:#fff; --line:#e4e1d8; }
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) { --bg:#15171a; --fg:#eceae4; --mut:#a9a79f; --card:#1d2024; --line:#2c3036; --c:#5fbf9a; }
+    :root {
+      --green:#006233; --green-d:#00401f; --red:#C1272D; --gold:#D4A017; --gold-l:#f3dc8f;
+      --bg:#fbf7ef; --fg:#1b1b18; --mut:#5d5a52; --card:#ffffff; --line:#e7dfcf; --soft:#f4eddd;
+      --serif:"Fraunces", Georgia, "Times New Roman", serif;
+      --sans:system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --ar:"Noto Naskh Arabic", "DejaVu Sans", serif;
     }
-    :root[data-theme="dark"] { --bg:#15171a; --fg:#eceae4; --mut:#a9a79f; --card:#1d2024; --line:#2c3036; --c:#5fbf9a; }
-    * { box-sizing: border-box; }
-    body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background:var(--bg); color:var(--fg); line-height:1.6; font-size:17px; }
-    header, main, footer { max-width: 960px; margin: 0 auto; padding: 0 16px; }
-    header { padding-top: 24px; display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
-    .brand { font-weight:700; color:var(--c); text-decoration:none; }
-    nav a { color:var(--fg); margin-left:14px; text-decoration:none; font-size:15px; }
-    h1 { font-size: clamp(26px, 4.5vw, 38px); line-height:1.2; margin: 28px 0 12px; }
-    h2 { font-size: 22px; margin: 36px 0 12px; }
-    p.lead { color:var(--mut); font-size:19px; max-width: 680px; }
-    .cta { display:inline-block; background:var(--c); color:#fff; padding:14px 22px; border-radius:10px; text-decoration:none; font-weight:600; margin-top:8px; }
-    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap:14px; margin-top:12px; }
-    .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px; text-decoration:none; color:var(--fg); display:block; }
-    .card strong { display:block; margin-bottom:6px; }
-    .card span { color:var(--mut); font-size:15px; }
-    .price { border:2px solid var(--c); border-radius:14px; padding:22px; background:var(--card); margin-top:24px; }
-    .price .amount { font-size:34px; font-weight:800; color:var(--c); }
-    .free-note { color:var(--mut); font-size:15px; }
-    ul.check li { margin: 6px 0; }
-    details { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 16px; margin:8px 0; }
-    summary { cursor:pointer; font-weight:600; }
-    .verified { font-size:14px; color:var(--mut); border-left:3px solid var(--c); padding-left:10px; margin-top:20px; }
-    footer { margin-top:48px; padding-bottom:40px; color:var(--mut); font-size:14px; border-top:1px solid var(--line); padding-top:16px; }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) { --bg:#121412; --fg:#efeadf; --mut:#b2ac9f; --card:#1b1e1b; --line:#2d322d; --soft:#181b18; }
+    }
+    :root[data-theme="dark"] { --bg:#121412; --fg:#efeadf; --mut:#b2ac9f; --card:#1b1e1b; --line:#2d322d; --soft:#181b18; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:var(--sans); background:var(--bg); color:var(--fg); line-height:1.6; font-size:17px; }
+    img { max-width:100%; }
+    a { color:var(--green); }
+    .wrap { max-width:1080px; margin:0 auto; padding:0 16px; }
+    :focus-visible { outline:3px solid var(--gold); outline-offset:2px; }
+
+    /* Cabecera */
+    .top { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:14px 0; }
+    .brand { display:flex; align-items:center; gap:10px; font-weight:700; color:var(--fg); text-decoration:none; }
+    .brand img { width:38px; height:38px; }
+    .top nav a { margin-left:14px; font-size:15px; color:var(--fg); text-decoration:none; }
+    .top nav .pill { background:var(--green); color:#fff; padding:8px 14px; border-radius:999px; }
+    @media (max-width:640px) { .top nav a:not(.pill) { display:none; } }
+
+    /* Héroe con patrón zellige */
+    .hero { position:relative; overflow:hidden; background:var(--green-d); color:#fff; }
+    .hero::before {
+      content:""; position:absolute; inset:0; opacity:.12;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 400 400'%3E%3Cpolygon fill='%23D4A017' points='350,200 287.8,236.4 306.1,306.1 236.4,287.8 200,350 163.6,287.8 93.9,306.1 112.2,236.4 50,200 112.2,163.6 93.9,93.9 163.6,112.2 200,50 236.4,112.2 306.1,93.9 287.8,163.6'/%3E%3C/svg%3E");
+      background-size:80px 80px;
+    }
+    .hero .wrap { position:relative; display:grid; grid-template-columns:1.25fr .9fr; gap:40px; align-items:center; padding-top:56px; padding-bottom:64px; }
+    @media (max-width:860px) { .hero .wrap { grid-template-columns:1fr; padding-top:36px; } }
+    .eyebrow { display:inline-block; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25); padding:6px 12px; border-radius:999px; font-size:14px; }
+    .hero h1 { font-family:var(--serif); font-size:clamp(32px, 5.2vw, 54px); line-height:1.08; margin:18px 0 10px; letter-spacing:-.01em; }
+    .hero h1 em { font-style:normal; color:var(--gold-l); }
+    .hero .ar { font-family:var(--ar); font-size:22px; color:var(--gold-l); margin:0 0 14px; direction:rtl; text-align:left; }
+    .hero .sub { font-size:19px; color:#e2efe7; max-width:620px; margin:0 0 26px; }
+    .cta { display:inline-flex; align-items:center; gap:10px; background:var(--gold); color:#1b1b18; font-weight:800; padding:16px 24px; border-radius:12px; text-decoration:none; font-size:18px; box-shadow:0 6px 0 #9c7408; transition:transform .1s; border:0; cursor:pointer; font-family:inherit; }
+    .cta:hover { transform:translateY(-1px); }
+    .cta:active { transform:translateY(3px); box-shadow:0 3px 0 #9c7408; }
+    .cta.red { background:var(--red); color:#fff; box-shadow:0 6px 0 #7c1418; }
+    .trust { display:flex; flex-wrap:wrap; gap:8px 18px; margin-top:22px; font-size:14px; color:#cfe3d7; padding:0; list-style:none; }
+    .trust li::before { content:"✓ "; color:var(--gold-l); font-weight:700; }
+
+    /* Mockup 3D de la guía */
+    .stage { perspective:1400px; display:flex; justify-content:center; padding:10px 0; }
+    .book { position:relative; width:270px; height:370px; transform:rotateY(-24deg) rotateX(6deg); transform-style:preserve-3d; transition:transform .5s ease; }
+    .stage:hover .book { transform:rotateY(-10deg) rotateX(3deg); }
+    .cover { position:absolute; inset:0; border-radius:4px 12px 12px 4px; overflow:hidden; background:linear-gradient(160deg, #0b7a43, var(--green) 45%, #003d1f); box-shadow:22px 26px 40px rgba(0,0,0,.45); display:flex; flex-direction:column; padding:26px 22px; color:#fff; }
+    .cover::after { content:""; position:absolute; left:0; top:0; bottom:0; width:14px; background:linear-gradient(90deg, rgba(0,0,0,.35), transparent); }
+    .cover .band { position:absolute; left:0; right:0; bottom:0; height:64px; background:var(--red); border-top:4px solid var(--gold); }
+    .cover img { width:72px; height:72px; margin-bottom:16px; }
+    .cover .k { font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold-l); }
+    .cover .t { font-family:var(--serif); font-size:28px; line-height:1.08; margin:8px 0 6px; }
+    .cover .s { font-size:13px; color:#d6eadd; }
+    .cover .ed { position:relative; z-index:1; margin-top:auto; font-size:12px; font-weight:700; letter-spacing:.06em; }
+    .pages { position:absolute; top:6px; bottom:6px; right:-16px; width:18px; background:repeating-linear-gradient(180deg, #fff 0 2px, #e8e2d4 2px 3px); transform:rotateY(90deg) translateZ(-2px); transform-origin:left; border-radius:0 3px 3px 0; }
+    .price-tag { position:absolute; right:-18px; top:24px; background:var(--gold); color:#1b1b18; font-weight:800; border-radius:999px; width:86px; height:86px; display:grid; place-items:center; text-align:center; line-height:1.05; transform:rotate(12deg) translateZ(30px); box-shadow:0 8px 18px rgba(0,0,0,.3); font-size:14px; }
+    .price-tag b { font-size:22px; display:block; }
+
+    /* Secciones */
+    section.block { padding:64px 0; }
+    section.alt { background:var(--soft); }
+    h2.title { font-family:var(--serif); font-size:clamp(26px, 3.8vw, 38px); line-height:1.15; margin:0 0 10px; }
+    .lead { color:var(--mut); font-size:18px; max-width:700px; margin:0 0 28px; }
+    .grid2 { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px; }
+    .pain { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px; position:relative; }
+    .pain .ico { width:44px; height:44px; border-radius:12px; display:grid; place-items:center; font-size:22px; background:#fbe9e9; margin-bottom:12px; }
+    .pain h3 { margin:0 0 6px; font-size:18px; }
+    .pain p { margin:0; color:var(--mut); font-size:15.5px; }
+
+    .modules { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px; counter-reset:m; }
+    .mod { background:var(--card); border:1px solid var(--line); border-top:5px solid var(--green); border-radius:14px; padding:22px; counter-increment:m; }
+    .mod:nth-child(2) { border-top-color:var(--red); }
+    .mod:nth-child(3) { border-top-color:var(--gold); }
+    .mod:nth-child(4) { border-top-color:var(--green-d); }
+    .mod .n::before { content:"Módulo " counter(m); font-size:12px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--mut); }
+    .mod h3 { margin:6px 0 8px; font-size:19px; }
+    .mod p { margin:0; color:var(--mut); font-size:15.5px; }
+
+    .local { display:grid; grid-template-columns:1fr 1fr; gap:36px; align-items:center; }
+    @media (max-width:860px) { .local { grid-template-columns:1fr; } }
+    .quote { font-family:var(--serif); font-size:clamp(20px, 2.6vw, 26px); line-height:1.35; margin:0; border-left:5px solid var(--gold); padding-left:18px; }
+    .coast { border-radius:18px; overflow:hidden; border:1px solid var(--line); background:linear-gradient(#f9d98b, #f6c56b 45%, #4aa3c7 46%, #1e6f93); aspect-ratio:4/3; position:relative; }
+    .coast svg { position:absolute; inset:0; width:100%; height:100%; }
+    .coast figcaption { position:absolute; left:12px; bottom:10px; background:rgba(0,0,0,.45); color:#fff; font-size:13px; padding:4px 10px; border-radius:999px; }
+
+    .app-preview { background:var(--card); border:1px solid var(--line); border-radius:22px; padding:18px; max-width:340px; margin:0 auto; box-shadow:0 18px 40px rgba(0,0,0,.12); }
+    .app-preview .bar { background:var(--green); color:#fff; border-radius:12px; padding:10px 14px; font-weight:700; font-size:15px; }
+    .app-preview ol { list-style:none; padding:0; margin:12px 0 0; }
+    .app-preview li { display:flex; gap:10px; align-items:flex-start; padding:10px 4px; border-bottom:1px dashed var(--line); font-size:15px; }
+    .app-preview li:last-child { border-bottom:0; }
+    .dot { flex:0 0 22px; height:22px; border-radius:50%; display:grid; place-items:center; font-size:13px; color:#fff; background:var(--green); }
+    .dot.wait { background:var(--gold); color:#1b1b18; }
+    .dot.todo { background:var(--line); color:var(--mut); }
+    .app-preview small { color:var(--mut); display:block; margin-top:8px; font-size:12px; }
+
+    /* Compra con order bump */
+    .buy { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start; }
+    @media (max-width:860px) { .buy { grid-template-columns:1fr; } }
+    .buy > * { min-width:0; }
+    .checkout { background:var(--card); border:2px solid var(--green); border-radius:20px; padding:26px; }
+    .checkout .cta { white-space:normal; text-align:center; }
+    @media (max-width:480px) { .checkout { padding:18px; } .checkout .big { font-size:34px; } .guarantee { flex-direction:column; } }
+    .checkout .row { display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding:8px 0; border-bottom:1px solid var(--line); }
+    .checkout .big { font-family:var(--serif); font-size:44px; font-weight:800; color:var(--green); }
+    .bump { display:flex; gap:12px; align-items:flex-start; margin:18px 0; padding:16px; border:2px dashed var(--red); border-radius:14px; background:#fff6f4; cursor:pointer; color:#1b1b18; }
+    .bump input { width:22px; height:22px; margin-top:3px; accent-color:var(--red); flex:0 0 auto; }
+    .bump strong { color:var(--red); }
+    .bump small { display:block; color:#5d5a52; margin-top:4px; }
+    .total { display:flex; justify-content:space-between; font-weight:800; font-size:20px; margin:8px 0 18px; }
+    .checkout .cta { width:100%; justify-content:center; }
+    .soon { font-size:14px; color:var(--mut); margin-top:10px; }
+    .guarantee { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:26px; display:flex; gap:18px; align-items:flex-start; }
+    .seal { flex:0 0 96px; height:96px; border-radius:50%; background:radial-gradient(circle, var(--gold-l), var(--gold)); display:grid; place-items:center; text-align:center; font-weight:800; color:#1b1b18; line-height:1.05; font-size:14px; border:4px double #9c7408; }
+    .seal b { font-size:28px; display:block; }
+    .guarantee h3 { margin:0 0 6px; }
+    .guarantee p { margin:0; color:var(--mut); }
+
+    .free { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:12px; }
+    .free a { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px; text-decoration:none; color:var(--fg); }
+    .free a strong { display:block; color:var(--green); }
+    .free a span { font-size:14px; color:var(--mut); }
+
+    details { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 18px; margin:10px 0; }
+    summary { cursor:pointer; font-weight:700; }
+
+    .final { background:var(--green-d); color:#fff; text-align:center; }
+    .final h2 { color:#fff; }
+    .final p { color:#d6eadd; }
+
+    footer { padding:28px 0 40px; color:var(--mut); font-size:14px; border-top:1px solid var(--line); }
     footer a { color:var(--mut); }
-    :focus-visible { outline: 3px solid var(--c); outline-offset: 2px; }
-    @media (max-width:480px) { body { font-size:16px; } }
   </style>
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
-    "@type":"WebSite",
-    "name":"Trámites de extranjería en Benicarló",
-    "url":"https://tramitesextranjeriabenicarlo.com/",
-    "inLanguage":"es"
+    "@type":"Product",
+    "name":"Guía práctica de extranjería en Benicarló",
+    "description":"Guía en lenguaje claro sobre arraigo, renovaciones, reagrupación familiar y nacionalidad, con enlaces a fuentes oficiales.",
+    "brand":{"@type":"Brand","name":"Trámites Benicarló"},
+    "offers":{"@type":"Offer","price":"9.99","priceCurrency":"EUR"}
   }
   </script>
 </head>
 <body>
-<header>
-  <a class="brand" href="./" style="display:flex;align-items:center;gap:10px"><img src="brand/logo-icon.svg" alt="" width="36" height="36"> Trámites Benicarló</a>
+
+<div class="wrap top">
+  <a class="brand" href="./"><img src="brand/logo-icon.svg" alt=""> Trámites Benicarló</a>
   <nav aria-label="Principal">
-    <a href="tramites/empadronamiento/">Empadronamiento</a>
-    <a href="tramites/nie/">NIE</a>
-    <a href="tramites/tarjeta-sanitaria/">Tarjeta sanitaria</a>
-    <a href="tramites/escolarizacion/">Escolarización</a>
+    <a href="#incluye">Qué incluye</a>
+    <a href="#gratis">Guías gratis</a>
+    <a href="app/">App</a>
+    <a class="pill" href="#comprar">Comprar · 9,99 €</a>
   </nav>
+</div>
+
+<!-- 1. HÉROE -->
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">¿Cansado de citas imposibles, incertidumbre y colas sin sentido?</span>
+      <h1>Tus papeles en Benicarló, <em>paso a paso</em>: la guía práctica para la comunidad marroquí</h1>
+      <p class="ar" lang="ar">دليلك العملي للأوراق في بنيكارلو، خطوة بخطوة</p>
+      <p class="sub">Arraigo (social, sociolaboral, socioformativo, familiar y de segunda oportunidad), renovaciones, reagrupación familiar y nacionalidad. Explicado de forma clara, directa y sin tecnicismos.</p>
+      <a class="cta" href="#comprar">📥 Quiero la guía práctica · 9,99 €</a>
+      <ul class="trust">
+        <li>Actualizada al reglamento de 2025</li>
+        <li>Enlaces a fuentes oficiales</li>
+        <li>Garantía de 14 días</li>
+      </ul>
+    </div>
+
+    <!-- 2. MOCKUP -->
+    <div class="stage" aria-hidden="true">
+      <div class="book">
+        <div class="cover">
+          <img src="brand/logo-icon.svg" alt="">
+          <span class="k">Guía práctica 2026</span>
+          <span class="t">Tus papeles en Benicarló</span>
+          <span class="s">Arraigo · Renovaciones · Reagrupación · Nacionalidad</span>
+          <span class="ed">TRÁMITES BENICARLÓ</span>
+          <div class="band"></div>
+        </div>
+        <div class="pages"></div>
+        <div class="price-tag"><span><b>9,99 €</b>PDF</span></div>
+      </div>
+    </div>
+  </div>
 </header>
 
 <main>
-  <h1>Tus trámites en España, explicados paso a paso</h1>
-  <p class="lead">Guías en español, árabe y darija con audio en cada paso. Cada trámite enlaza a su fuente oficial y muestra la fecha de la última revisión.</p>
-  <a class="cta" href="#suscribirse">Crear mi guía personalizada: 5 €/mes</a>
-
-  <h2>Trámites más consultados</h2>
-  <div class="grid">
-    <a class="card" href="tramites/empadronamiento/"><strong>Empadronamiento</strong><span>Cita previa en el ayuntamiento y documentos. Pendiente de verificación.</span></a>
-    <a class="card" href="tramites/nie/"><strong>NIE y cita previa</strong><span>Cómo pedir cita y qué llevar.</span></a>
-    <a class="card" href="tramites/tarjeta-sanitaria/"><strong>Tarjeta sanitaria</strong><span>Alta en el sistema sanitario público.</span></a>
-    <a class="card" href="tramites/escolarizacion/"><strong>Escolarización</strong><span>Matrícula de niños y niñas.</span></a>
-  </div>
-
-  <h2>Lo que es gratuito y lo que es de pago</h2>
-  <p>La información de cada trámite es gratuita. Los trámites oficiales se indican siempre con su tasa real: si el Estado no cobra, aquí tampoco se cobra por el trámite.</p>
-
-  <section class="price" id="suscribirse" aria-labelledby="precio-titulo">
-    <h2 id="precio-titulo">Guía personalizada: 5 € al mes</h2>
-    <p class="amount">5 € / mes</p>
-    <p>Respondes unas preguntas sobre tu situación y la app genera tu ruta de trámites, con:</p>
-    <ul class="check">
-      <li>Pasos ordenados según tu caso, con audio en tu idioma.</li>
-      <li>Recordatorios de plazos.</li>
-      <li>Generadores de documentos que funcionan en tu navegador.</li>
-      <li>Directorio de servicios verificados por reseñas.</li>
-    </ul>
-    <p class="free-note">Cancelas cuando quieras. No somos gestoría ni abogados: si tu caso lo requiere, te indicaremos a quién acudir.</p>
-    <p><a class="cta" href="cuenta/">Empezar</a></p>
+  <!-- 3. DOLORES -->
+  <section class="block">
+    <div class="wrap">
+      <h2 class="title">¿Te suena alguna de estas situaciones?</h2>
+      <p class="lead">Son los problemas que más nos cuentan en Benicarló y la comarca.</p>
+      <div class="grid2">
+        <article class="pain"><div class="ico">⏳</div><h3>El laberinto de la cita previa</h3><p>Días enteros intentando conseguir cita en comisaría o en la Oficina de Extranjería de Castellón, sin éxito.</p></article>
+        <article class="pain"><div class="ico">💼</div><h3>Miedo a perder tu situación</h3><p>La preocupación de que un error en tus papeles afecte a tu contrato en el campo, la hostelería o el comercio.</p></article>
+        <article class="pain"><div class="ico">👨‍👩‍👧</div><h3>Una reagrupación complicada</h3><p>Quieres traer a tu familia desde Marruecos, pero no sabes qué ingresos ni qué vivienda te van a pedir.</p></article>
+        <article class="pain"><div class="ico">🧾</div><h3>Tasas e impresos equivocados</h3><p>Pagar la tasa incorrecta o usar el formulario equivocado y perder meses porque el expediente vuelve por un detalle.</p></article>
+      </div>
+    </div>
   </section>
 
-  <h2>Preguntas frecuentes</h2>
-  <details><summary>¿Es gratis la información?</summary><p>Sí. Las guías generales son gratuitas. La suscripción cubre la personalización y las herramientas.</p></details>
-  <details><summary>¿Sois una gestoría?</summary><p>No. Somos una herramienta informativa. Para casos complejos te derivamos a gestor colegiado o abogado, indicando si hay algún acuerdo económico.</p></details>
-  <details><summary>¿En qué idiomas está?</summary><p>Español por defecto, y árabe, darija, tarifit y tamazight como opciones. Las voces de audio dependen de tu navegador: revisa qué idiomas tiene instalados.</p></details>
-  <details><summary>¿Qué pasa con mis documentos?</summary><p>No pedimos documentos reales en la web pública. Los generadores funcionan en tu navegador y no envían datos sin tu consentimiento explícito.</p></details>
+  <!-- 4. QUÉ INCLUYE -->
+  <section class="block alt" id="incluye">
+    <div class="wrap">
+      <h2 class="title">Qué incluye exactamente la guía</h2>
+      <p class="lead">Bloques prácticos y directos para los trámites que más necesita la comunidad, con cada paso enlazado a su fuente oficial.</p>
+      <div class="modules">
+        <article class="mod"><span class="n"></span><h3>Rutas de arraigo actualizadas</h3><p>Las cinco figuras del reglamento vigente desde mayo de 2025: social, sociolaboral, socioformativo, familiar y de segunda oportunidad. Qué pide cada una y cuál encaja contigo.</p></article>
+        <article class="mod"><span class="n"></span><h3>Reagrupación familiar</h3><p>Qué requisitos de vivienda y de medios económicos se exigen, y cómo se pide el informe de vivienda en la Comunitat Valenciana.</p></article>
+        <article class="mod"><span class="n"></span><h3>Renovaciones sin sorpresas</h3><p>Cómo renovar tu autorización de residencia y trabajo, incluida la vía telemática, con los plazos para no quedarte sin papeles.</p></article>
+        <article class="mod"><span class="n"></span><h3>Tasas, impresos y enlaces</h3><p>El modelo de tasa correcto para cada trámite y los formularios explicados campo por campo. Por ejemplo: tasa 790 código 012.</p></article>
+      </div>
+    </div>
+  </section>
 
-  <p class="verified">Última revisión de la información general: 23/10/2026. Verifica siempre en la fuente oficial indicada en cada trámite.</p>
+  <!-- 5. LOCAL -->
+  <section class="block">
+    <div class="wrap local">
+      <div>
+        <h2 class="title">Hecha para Benicarló, no para toda España</h2>
+        <p class="quote">«Una guía genérica no te dice dónde pedir cita en tu pueblo. Esta te lleva directamente a las oficinas y trámites de Benicarló y de la provincia de Castellón.»</p>
+        <p class="lead" style="margin-top:18px">Enlaces directos al Ayuntamiento de Benicarló (padrón y cita previa), a la Oficina de Extranjería de Castellón y a las sedes oficiales, con la fecha en que se revisó cada dato. Te ayuda a entender tu caso antes de decidir si necesitas una gestoría o un abogado.</p>
+      </div>
+      <figure class="coast" style="margin:0">
+        <!-- Ilustración del puerto. Sustituir por una foto propia de Benicarló (puerto, Ayuntamiento) cuando se disponga de ella. -->
+        <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <circle cx="300" cy="80" r="34" fill="#fff3c4" opacity=".9"/>
+          <path d="M0 150 L60 128 L80 140 L120 118 L150 134 L190 112 L230 136 L260 124 L300 140 L340 120 L400 136 L400 150 Z" fill="#c8874a" opacity=".55"/>
+          <rect x="40" y="96" width="14" height="40" fill="#fff"/><rect x="40" y="90" width="14" height="8" fill="#C1272D"/>
+          <path d="M200 205 l60 0 l-10 14 l-40 0 z" fill="#fff"/><path d="M228 205 l0 -48 l26 44 z" fill="#fbf7ef"/>
+          <path d="M90 240 l44 0 l-8 10 l-28 0 z" fill="#fff"/><path d="M110 240 l0 -30 l18 28 z" fill="#f3dc8f"/>
+          <path d="M0 196 Q50 188 100 196 T200 196 T300 196 T400 196" stroke="#fff" stroke-opacity=".5" fill="none" stroke-width="2"/>
+          <path d="M0 262 Q50 254 100 262 T200 262 T300 262 T400 262" stroke="#fff" stroke-opacity=".35" fill="none" stroke-width="2"/>
+        </svg>
+        <figcaption>Benicarló · Puerto</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- APP / RESULTADO -->
+  <section class="block alt">
+    <div class="wrap local">
+      <div class="app-preview" aria-label="Ejemplo de la app: progreso de un trámite">
+        <div class="bar">Tu ruta · Arraigo sociolaboral</div>
+        <ol>
+          <li><span class="dot">✓</span><span>Empadronamiento en Benicarló</span></li>
+          <li><span class="dot">✓</span><span>Documentos reunidos y revisados</span></li>
+          <li><span class="dot">✓</span><span>Tasa pagada con el modelo correcto</span></li>
+          <li><span class="dot wait">…</span><span>Solicitud presentada · esperando respuesta</span></li>
+          <li><span class="dot todo">5</span><span>Toma de huellas y TIE</span></li>
+        </ol>
+        <small>Ejemplo ilustrativo de la app. No es una captura de ninguna sede oficial.</small>
+      </div>
+      <div>
+        <h2 class="title">Del caos a una lista clara</h2>
+        <p class="lead">Sabrás en qué paso estás, qué te falta y qué viene después. Con la app (5 €/mes, opcional) puedes llevar el seguimiento y recibir recordatorios de plazos.</p>
+        <a class="cta red" href="app/">Ver la app</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 y 7. COMPRA + ORDER BUMP + GARANTÍA -->
+  <section class="block" id="comprar">
+    <div class="wrap buy">
+      <div class="checkout">
+        <h2 class="title" style="font-size:28px">Guía práctica de extranjería · Benicarló</h2>
+        <div class="row"><span>Guía en PDF (descarga inmediata)</span><span class="big">9,99 €</span></div>
+
+        <label class="bump">
+          <input type="checkbox" id="bump">
+          <span>
+            <strong>¡Sí! Añade el Kit de preparación del examen CCSE por solo 4,99 € más</strong>
+            <small>Las preguntas del examen de nacionalidad del Instituto Cervantes explicadas de forma ultrasencilla, con trucos para recordarlas. El manual oficial del Cervantes es gratuito; el kit es nuestra explicación simplificada.</small>
+          </span>
+        </label>
+
+        <div class="total"><span>Total</span><span id="total">9,99 €</span></div>
+        <button class="cta" id="pay" type="button">🚀 Quiero asegurar mi futuro en Benicarló</button>
+        <p class="soon" id="pay-note" role="status" aria-live="polite">Pago seguro con tarjeta a través de Stripe.</p>
+      </div>
+
+      <div>
+        <div class="guarantee">
+          <div class="seal"><span><b>14</b>días</span></div>
+          <div>
+            <h3>Garantía total, sin riesgo</h3>
+            <p>Tienes 14 días para revisar la guía. Si sientes que no te es útil o no aplica a tu situación, escríbenos a <a href="mailto:pqpimohamedsm@gmail.com">pqpimohamedsm@gmail.com</a> y te devolvemos el 100 % de tu dinero. Sin preguntas.</p>
+          </div>
+        </div>
+        <p class="lead" style="margin-top:18px;font-size:15px">No somos gestoría ni despacho de abogados. La guía es información práctica y no sustituye el asesoramiento profesional en casos complejos. Las tasas oficiales se pagan aparte, a la administración.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guías gratuitas (SEO) -->
+  <section class="block alt" id="gratis">
+    <div class="wrap">
+      <h2 class="title">Guías gratuitas</h2>
+      <p class="lead">La información básica de cada trámite es gratis y siempre lo será.</p>
+      <div class="free">
+        <a href="tramites/empadronamiento/"><strong>Empadronamiento</strong><span>Cita previa en el Ayuntamiento de Benicarló</span></a>
+        <a href="tramites/nie/"><strong>NIE</strong><span>Tasa, formulario EX15 y dónde presentarlo</span></a>
+        <a href="tramites/tarjeta-sanitaria/"><strong>Tarjeta sanitaria</strong><span>Acceso a la sanidad pública</span></a>
+        <a href="tramites/escolarizacion/"><strong>Escolarización</strong><span>Matrícula de niños y niñas</span></a>
+        <a href="tramites/imv/"><strong>Ingreso Mínimo Vital</strong><span>Documentación básica</span></a>
+        <a href="tramites/empleo/"><strong>Empleo</strong><span>Inscripción como demandante</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap" style="max-width:780px">
+      <h2 class="title">Preguntas frecuentes</h2>
+      <details><summary>¿La guía está actualizada?</summary><p>Sí. Está basada en el Reglamento de Extranjería aprobado por el Real Decreto 1155/2024, en vigor desde el 20 de mayo de 2025, y cada paso indica su fuente oficial y la fecha de revisión.</p></details>
+      <details><summary>¿Sois una gestoría?</summary><p>No. Es una guía informativa. Si tu caso es complejo, te recomendamos un abogado o gestor colegiado.</p></details>
+      <details><summary>¿La compra incluye las tasas oficiales?</summary><p>No. Las tasas las pagas directamente a la administración. La guía te dice cuál es la correcta en cada caso.</p></details>
+      <details><summary>¿En qué idiomas está?</summary><p>En español, con las palabras clave también en árabe. La app tiene además darija y tamazight.</p></details>
+      <details><summary>¿Cómo funciona la garantía?</summary><p>Durante 14 días desde la compra, escríbenos por email y te devolvemos el importe completo.</p></details>
+    </div>
+  </section>
+
+  <section class="block final">
+    <div class="wrap">
+      <h2 class="title">Tu tranquilidad legal empieza con un paso claro</h2>
+      <p class="lead" style="margin:0 auto 24px">Guía práctica por 9,99 €, con 14 días de garantía.</p>
+      <a class="cta" href="#comprar">📥 Descargar la guía práctica · 9,99 €</a>
+    </div>
+  </section>
 </main>
 
 <footer>
-  <p>
-    <a href="aviso-legal/">Aviso legal</a> ·
-    <a href="privacidad/">Política de privacidad</a> ·
-    <a href="cookies/">Cookies</a> ·
-    <a href="mailto:pqpimohamedsm@gmail.com">Contacto</a>
-  </p>
-  <p>Servicio informativo independiente. No sustituye el asesoramiento de un profesional.</p>
+  <div class="wrap">
+    <p>
+      <a href="legal/aviso-legal.html">Aviso legal</a> ·
+      <a href="legal/privacidad.html">Privacidad</a> ·
+      <a href="mailto:pqpimohamedsm@gmail.com">Contacto</a>
+    </p>
+    <p>Servicio informativo independiente. No es una web de la administración pública ni sustituye el asesoramiento profesional.</p>
+  </div>
 </footer>
+
+<script>
+  // Enlaces de pago de Stripe (Payment Links). Crear dos en el panel de Stripe:
+  // uno con la guía (9,99 €) y otro con guía + kit CCSE (14,98 €). Son URL públicas.
+  const PAYMENT_LINKS = {
+    guia: "",
+    guiaKit: ""
+  };
+
+  const bump = document.getElementById("bump");
+  const total = document.getElementById("total");
+  const note = document.getElementById("pay-note");
+
+  bump.addEventListener("change", () => {
+    total.textContent = bump.checked ? "14,98 €" : "9,99 €";
+  });
+
+  document.getElementById("pay").addEventListener("click", () => {
+    const url = bump.checked ? PAYMENT_LINKS.guiaKit : PAYMENT_LINKS.guia;
+    if (url) { location.href = url; return; }
+    note.innerHTML = 'La venta abre muy pronto. Escríbenos a <a href="mailto:pqpimohamedsm@gmail.com?subject=Quiero%20la%20gu%C3%ADa">pqpimohamedsm@gmail.com</a> y te avisamos el primer día.';
+  });
+</script>
 </body>
 </html>

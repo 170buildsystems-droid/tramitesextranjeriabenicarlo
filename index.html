@@ -174,7 +174,7 @@
     <a href="#incluye">Qué incluye</a>
     <a href="#gratis">Guías gratis</a>
     <a href="app/">App</a>
-    <a class="pill" href="#comprar">Comprar · 9,99 €</a>
+    <a class="pill" href="#comprar" data-track="cta_click">Comprar · 9,99 €</a>
   </nav>
 </div>
 
@@ -186,7 +186,7 @@
       <h1>Tus papeles en Benicarló, <em>paso a paso</em>: la guía práctica para la comunidad marroquí</h1>
       <p class="ar" lang="ar">دليلك العملي للأوراق في بنيكارلو، خطوة بخطوة</p>
       <p class="sub">Arraigo (social, sociolaboral, socioformativo, familiar y de segunda oportunidad), renovaciones, reagrupación familiar y nacionalidad. Explicado de forma clara, directa y sin tecnicismos.</p>
-      <a class="cta" href="#comprar">📥 Quiero la guía práctica · 9,99 €</a>
+      <a class="cta" href="#comprar" data-track="cta_click">📥 Quiero la guía práctica · 9,99 €</a>
       <ul class="trust">
         <li>Actualizada al reglamento de 2025</li>
         <li>Enlaces a fuentes oficiales</li>
@@ -282,7 +282,7 @@
       <div>
         <h2 class="title">Del caos a una lista clara</h2>
         <p class="lead">Sabrás en qué paso estás, qué te falta y qué viene después. Con la app (5 €/mes, opcional) puedes llevar el seguimiento y recibir recordatorios de plazos.</p>
-        <a class="cta red" href="app/">Ver la app</a>
+        <a class="cta red" href="app/" data-track="app_open">Ver la app</a>
       </div>
     </div>
   </section>
@@ -351,7 +351,7 @@
     <div class="wrap">
       <h2 class="title">Tu tranquilidad legal empieza con un paso claro</h2>
       <p class="lead" style="margin:0 auto 24px">Guía práctica por 9,99 €, con 14 días de garantía.</p>
-      <a class="cta" href="#comprar">📥 Descargar la guía práctica · 9,99 €</a>
+      <a class="cta" href="#comprar" data-track="cta_click">📥 Descargar la guía práctica · 9,99 €</a>
     </div>
   </section>
 </main>
@@ -379,15 +379,26 @@
   const total = document.getElementById("total");
   const note = document.getElementById("pay-note");
 
+  const track = (e, m) => { if (window.tbTrack) window.tbTrack(e, m); };
+
   bump.addEventListener("change", () => {
     total.textContent = bump.checked ? "14,98 €" : "9,99 €";
+    track("bump_toggle", { checked: bump.checked });
   });
 
   document.getElementById("pay").addEventListener("click", () => {
     const url = bump.checked ? PAYMENT_LINKS.guiaKit : PAYMENT_LINKS.guia;
-    if (url) { location.href = url; return; }
+    track("checkout_start", { kit: bump.checked, live: !!url });
+    if (url) {
+      // Pasa la fuente de tráfico a Stripe para atribuir la venta en el panel.
+      const src = (new URLSearchParams(location.search).get("utm_source") || "").replace(/[^A-Za-z0-9_-]/g, "").slice(0, 60);
+      location.href = src ? url + (url.includes("?") ? "&" : "?") + "client_reference_id=" + src : url;
+      return;
+    }
     note.innerHTML = 'La venta abre muy pronto. Escríbenos a <a href="mailto:pqpimohamedsm@gmail.com?subject=Quiero%20la%20gu%C3%ADa">pqpimohamedsm@gmail.com</a> y te avisamos el primer día.';
   });
 </script>
+<!-- Analítica sin cookies: sustituir TU-PROYECTO por el de Supabase. Sin configurar no envía nada. -->
+<script src="js/track.js" data-endpoint="https://TU-PROYECTO.supabase.co/functions/v1/track" defer></script>
 </body>
 </html>

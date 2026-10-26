@@ -61,6 +61,18 @@ Pasos para ponerla en marcha (requieren tu cuenta):
 
 Aún no está probado de extremo a extremo: no tengo acceso a tus cuentas de Supabase ni de Stripe.
 
+## Panel de gestión (`/admin/`)
+Muestra ingresos, ventas, conversión, ticket medio, aceptación del kit CCSE, suscriptores, visitantes, embudo de compra, fuentes de tráfico, dispositivos, idiomas, páginas top y últimos pedidos, con lecturas automáticas. Mientras Supabase no esté configurado enseña **datos de demostración** marcados como tales.
+
+Para activarlo con datos reales:
+1. Ejecutar `sql/003_analytics.sql` en Supabase.
+2. `supabase secrets set TRACK_SALT=<cadena aleatoria larga> GUIDE_PRICE_CENTS=999` y desplegar `supabase functions deploy track --no-verify-jwt`.
+3. En `index.html`, cambiar `TU-PROYECTO` en el `<script src="js/track.js" data-endpoint=...>`.
+4. En Stripe, añadir al webhook los eventos `checkout.session.completed` y `charge.refunded`.
+5. Registrarte en `/cuenta/` y darte permiso de administrador: `insert into public.admins (user_id) select id from auth.users where email = 'TU_EMAIL';`
+
+La analítica no usa cookies ni guarda IP (hash diario con sal), y respeta Do Not Track / Global Privacy Control.
+
 ## Fuentes
 `FUENTES.md` registra cada URL oficial consultada, qué quedó confirmado y qué no. Úsalo para revisar cada `[VERIFICAR]` antes de quitar `noindex`.
 

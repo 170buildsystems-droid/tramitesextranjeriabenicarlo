@@ -98,6 +98,10 @@
     .mod:nth-child(3) { border-top-color:var(--gold); }
     .mod:nth-child(4) { border-top-color:var(--green-d); }
     .mod .n::before { content:"Módulo " counter(m); font-size:12px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--mut); }
+    .mod .st { font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; padding:2px 8px; border-radius:999px; background:var(--soft); color:var(--mut); margin-left:6px; }
+    .mod .st.ok { background:#e3f3e9; color:#00552c; }
+    .presale { background:#fff8e1; border:1px solid #e9cf7a; border-radius:12px; padding:12px 14px; font-size:14.5px; color:#1b1b18; margin:14px 0; }
+    .presale ul { margin:6px 0 0; padding-left:18px; }
     .mod h3 { margin:6px 0 8px; font-size:19px; }
     .mod p { margin:0; color:var(--mut); font-size:15.5px; }
 
@@ -185,12 +189,13 @@
       <span class="eyebrow">¿Cansado de citas imposibles, incertidumbre y colas sin sentido?</span>
       <h1>Tus papeles en Benicarló, <em>paso a paso</em>: la guía práctica para la comunidad marroquí</h1>
       <p class="ar" lang="ar">دليلك العملي للأوراق في بنيكارلو، خطوة بخطوة</p>
-      <p class="sub">Arraigo (social, sociolaboral, socioformativo, familiar y de segunda oportunidad), renovaciones, reagrupación familiar y nacionalidad. Explicado de forma clara, directa y sin tecnicismos.</p>
+      <p class="sub">Arraigo (social, sociolaboral, socioformativo, familiar y de segunda oportunidad), reagrupación familiar, renovaciones y tasas. Explicado de forma clara, directa y sin tecnicismos.</p>
       <a class="cta" href="#comprar" data-track="cta_click">📥 Quiero la guía práctica · 9,99 €</a>
       <ul class="trust">
         <li>Actualizada al reglamento de 2025</li>
         <li>Enlaces a fuentes oficiales</li>
         <li>Garantía de 14 días</li>
+        <li>Preventa: módulo 1 ya disponible</li>
       </ul>
     </div>
 
@@ -233,10 +238,10 @@
       <h2 class="title">Qué incluye exactamente la guía</h2>
       <p class="lead">Bloques prácticos y directos para los trámites que más necesita la comunidad, con cada paso enlazado a su fuente oficial.</p>
       <div class="modules">
-        <article class="mod"><span class="n"></span><h3>Rutas de arraigo actualizadas</h3><p>Las cinco figuras del reglamento vigente desde mayo de 2025: social, sociolaboral, socioformativo, familiar y de segunda oportunidad. Qué pide cada una y cuál encaja contigo.</p></article>
-        <article class="mod"><span class="n"></span><h3>Reagrupación familiar</h3><p>Qué requisitos de vivienda y de medios económicos se exigen, y cómo se pide el informe de vivienda en la Comunitat Valenciana.</p></article>
-        <article class="mod"><span class="n"></span><h3>Renovaciones sin sorpresas</h3><p>Cómo renovar tu autorización de residencia y trabajo, incluida la vía telemática, con los plazos para no quedarte sin papeles.</p></article>
-        <article class="mod"><span class="n"></span><h3>Tasas, impresos y enlaces</h3><p>El modelo de tasa correcto para cada trámite y los formularios explicados campo por campo. Por ejemplo: tasa 790 código 012.</p></article>
+        <article class="mod"><span class="n"></span> <span class="st ok">Disponible</span><h3>Rutas de arraigo actualizadas</h3><p>Las cinco figuras del reglamento vigente desde mayo de 2025: social, sociolaboral, socioformativo, familiar y de segunda oportunidad. Qué pide cada una y cuál encaja contigo.</p></article>
+        <article class="mod"><span class="n"></span> <span class="st">Próximamente</span><h3>Reagrupación familiar</h3><p>Qué requisitos de vivienda y de medios económicos se exigen, y cómo se pide el informe de vivienda en la Comunitat Valenciana.</p></article>
+        <article class="mod"><span class="n"></span> <span class="st">Próximamente</span><h3>Renovaciones sin sorpresas</h3><p>Cómo renovar tu autorización de residencia y trabajo, incluida la vía telemática, con los plazos para no quedarte sin papeles.</p></article>
+        <article class="mod"><span class="n"></span> <span class="st">Próximamente</span><h3>Tasas, impresos y enlaces</h3><p>El modelo de tasa correcto para cada trámite y los formularios explicados campo por campo. Por ejemplo: tasa 790 código 012.</p></article>
       </div>
     </div>
   </section>
@@ -292,19 +297,19 @@
     <div class="wrap buy">
       <div class="checkout">
         <h2 class="title" style="font-size:28px">Guía práctica de extranjería · Benicarló</h2>
-        <div class="row"><span>Guía en PDF (descarga inmediata)</span><span class="big">9,99 €</span></div>
+        <div class="row"><span>Guía completa en PDF · 4 módulos</span><span class="big">9,99 €</span></div>
 
-        <label class="bump">
-          <input type="checkbox" id="bump">
-          <span>
-            <strong>¡Sí! Añade el Kit de preparación del examen CCSE por solo 4,99 € más</strong>
-            <small>Las preguntas del examen de nacionalidad del Instituto Cervantes explicadas de forma ultrasencilla, con trucos para recordarlas. El manual oficial del Cervantes es gratuito; el kit es nuestra explicación simplificada.</small>
-          </span>
-        </label>
+        <div class="presale">
+          <b>Preventa: pagas una vez y recibes todo.</b>
+          <ul>
+            <li><b>Módulo 1 (arraigo):</b> en tu email en menos de 24 horas.</li>
+            <li><b>Módulos 2, 3 y 4:</b> al mismo email en cuanto se publiquen, sin coste extra.</li>
+          </ul>
+        </div>
 
-        <div class="total"><span>Total</span><span id="total">9,99 €</span></div>
+        <div class="total"><span>Total (IVA incluido)</span><span id="total">9,99 €</span></div>
         <button class="cta" id="pay" type="button">🚀 Quiero asegurar mi futuro en Benicarló</button>
-        <p class="soon" id="pay-note" role="status" aria-live="polite">Pago seguro con tarjeta a través de Stripe.</p>
+        <p class="soon" id="pay-note" role="status" aria-live="polite">Pago seguro con tarjeta, Apple Pay o Google Pay a través de Stripe. En tu extracto el cargo aparecerá como <b>FITBOWL</b>.</p>
       </div>
 
       <div>
@@ -340,6 +345,8 @@
     <div class="wrap" style="max-width:780px">
       <h2 class="title">Preguntas frecuentes</h2>
       <details><summary>¿La guía está actualizada?</summary><p>Sí. Está basada en el Reglamento de Extranjería aprobado por el Real Decreto 1155/2024, en vigor desde el 20 de mayo de 2025, y cada paso indica su fuente oficial y la fecha de revisión.</p></details>
+      <details><summary>¿Cómo recibo la guía?</summary><p>Es una preventa. Tras pagar, te enviamos el módulo 1 (arraigo) en PDF a tu email en menos de 24 horas. Los módulos 2, 3 y 4 te llegan al mismo email cuando se publiquen, sin pagar nada más. Si prefieres no esperar, tienes la garantía de 14 días.</p></details>
+      <details><summary>¿Por qué en el banco aparece «FITBOWL»?</summary><p>Los pagos se gestionan a través de la cuenta de Stripe de FITBOWL, y ese es el nombre que muestra tu banco. Si tienes dudas sobre un cargo, escríbenos a pqpimohamedsm@gmail.com.</p></details>
       <details><summary>¿Sois una gestoría?</summary><p>No. Es una guía informativa. Si tu caso es complejo, te recomendamos un abogado o gestor colegiado.</p></details>
       <details><summary>¿La compra incluye las tasas oficiales?</summary><p>No. Las tasas las pagas directamente a la administración. La guía te dice cuál es la correcta en cada caso.</p></details>
       <details><summary>¿En qué idiomas está?</summary><p>En español, con las palabras clave también en árabe. La app tiene además darija y tamazight.</p></details>
@@ -350,7 +357,7 @@
   <section class="block final">
     <div class="wrap">
       <h2 class="title">Tu tranquilidad legal empieza con un paso claro</h2>
-      <p class="lead" style="margin:0 auto 24px">Guía práctica por 9,99 €, con 14 días de garantía.</p>
+      <p class="lead" style="margin:0 auto 24px">Guía completa de 4 módulos por 9,99 €, con 14 días de garantía. El módulo 1 te llega hoy.</p>
       <a class="cta" href="#comprar" data-track="cta_click">📥 Descargar la guía práctica · 9,99 €</a>
     </div>
   </section>
@@ -368,27 +375,15 @@
 </footer>
 
 <script>
-  // Enlaces de pago de Stripe (Payment Links). Crear dos en el panel de Stripe:
-  // uno con la guía (9,99 €) y otro con guía + kit CCSE (14,98 €). Son URL públicas.
-  const PAYMENT_LINKS = {
-    guia: "",
-    guiaKit: ""
-  };
+  // Enlace de pago de Stripe (Payment Link, cuenta Fitbowl). Es una URL pública.
+  const PAYMENT_LINK = "https://buy.stripe.com/3cIaEX3dncor6PIg48co000";
 
-  const bump = document.getElementById("bump");
-  const total = document.getElementById("total");
   const note = document.getElementById("pay-note");
-
   const track = (e, m) => { if (window.tbTrack) window.tbTrack(e, m); };
 
-  bump.addEventListener("change", () => {
-    total.textContent = bump.checked ? "14,98 €" : "9,99 €";
-    track("bump_toggle", { checked: bump.checked });
-  });
-
   document.getElementById("pay").addEventListener("click", () => {
-    const url = bump.checked ? PAYMENT_LINKS.guiaKit : PAYMENT_LINKS.guia;
-    track("checkout_start", { kit: bump.checked, live: !!url });
+    const url = PAYMENT_LINK;
+    track("checkout_start", { live: !!url });
     if (url) {
       // Pasa la fuente de tráfico a Stripe para atribuir la venta en el panel.
       const src = (new URLSearchParams(location.search).get("utm_source") || "").replace(/[^A-Za-z0-9_-]/g, "").slice(0, 60);
